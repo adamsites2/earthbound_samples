@@ -1,3 +1,11 @@
 <samples>
-    
+    <sample>
+        <indexMusic>
+            video embed here
+            video embed here
+        </indexMusic>
+        <sampleValues>
+            index sample\\s
+        </sampleValues>
+    </sample>
 </samples>
