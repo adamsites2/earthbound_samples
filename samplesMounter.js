@@ -1,6 +1,5 @@
 "use strict";
-fetch("/samples.xml").then(xmlSamples => {
+fetch("/samples.xml").then(xmlSamples => xmlSamples.json().then(response => {
     const domParser = new DOMParser();
-    const samplesDoc = domParser.parseFromString(xmlSamples, "text/xml");
-    console.log(xmlSamples, samplesDoc);
-});
+    const samplesDoc = domParser.parseFromString(response, "text/xml");
+}));
