@@ -1,8 +1,3 @@
-function nbsp(){
-    let textNode = document.createElement("textarea")
-    textNode.textContent = "nbsp;"
-    return textNode
-}
 fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
     const samplesDiv = document.getElementById("samples") as HTMLDivElement
     const domParser = new DOMParser()
@@ -17,7 +12,7 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampledName = document.createElement("td") as HTMLTableCellElement
             sampledName.textContent = index
             tableElement.appendChild(sampledName)
-            tableElement.appendChild(nbsp())
+            tableElement.appendChild(document.createTextNode("nbsp;"))
         })
         console.log(tableElement)
         samplesDiv.appendChild(tableElement)
