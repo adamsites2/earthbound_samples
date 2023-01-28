@@ -22,6 +22,7 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
         sampledIndexes.forEach((index) => {
             sampledName.innerHTML = sampledName.innerHTML + index + " "
         })
+        sampledName.style.border = "none;"
         trElement.appendChild(sampledName)
         samplesDiv.appendChild(tableElement)
         const samplesIndexes = sample.getElementsByTagName("sampleValues").item(0)?.getElementsByTagName("theSample") as HTMLCollection
@@ -33,8 +34,8 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampleCreator = value.getElementsByTagName("creator").item(0)?.textContent as string
             let constructedHtmlLi = `<li>${sampleMusic}</br>${sampleTimestamp}</br>${sampleCreator}</li>`
             samplesName.innerHTML = constructedHtmlLi
-            console.log(samplesName.innerHTML)
         }
+        samplesName.style.border = "none;"
         trElement.appendChild(samplesName)
         subTable.appendChild(trElement)
         tableElement.appendChild(document.createTextNode(sample.getElementsByTagName("description").item(0)?.textContent as string))
