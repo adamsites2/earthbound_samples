@@ -1,9 +1,10 @@
 fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
     const samplesDiv = document.getElementById("samples") as HTMLDivElement
     const domParser = new DOMParser()
-    const samplesDoc = domParser.parseFromString(response, "text/xml").getElementsByName("samples")[0] as HTMLDivElement
+    const samplesDocc = domParser.parseFromString(response, "text/xml")
+    const samplesDoc = samplesDocc.getElementById("samples") as HTMLDivElement
+    samplesDoc.innerHTML = samplesDoc.innerHTML.replace("</br>", "")
     const samples = samplesDoc.getElementsByTagName("sample")
-    
     for (let i = 0; i < samples.length; i++){
         const sample = samples.item(i) as HTMLElement
         let tableElement = document.createElement("tr") as HTMLTableRowElement
