@@ -1,4 +1,9 @@
 "use strict";
+function nbsp() {
+    let textNode = document.createElement("textarea");
+    textNode.textContent = "nbsp;";
+    return textNode;
+}
 fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
     var _a;
     const samplesDiv = document.getElementById("samples");
@@ -14,7 +19,7 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampledName = document.createElement("td");
             sampledName.textContent = index;
             tableElement.appendChild(sampledName);
-            tableElement.appendChild(document.createElement("br"));
+            tableElement.appendChild(nbsp());
         });
         console.log(tableElement);
         samplesDiv.appendChild(tableElement);
