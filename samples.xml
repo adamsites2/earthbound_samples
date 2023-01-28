@@ -1,8 +1,6 @@
 <samples id="samples">
     <sample>
-        <indexMusic>
-            video embed here\nvideo embed here
-        </indexMusic>
+        <indexMusic>video embed here\\\\video embed here</indexMusic>
         <sampleValues>
             <description>
 
