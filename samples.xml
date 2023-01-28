@@ -1,10 +1,13 @@
 <samples id="samples">
     <sample>
-        <indexMusic>video embed here\\\\video embed here</indexMusic>
+        <indexMusic><iframe width="560" height="315" src="https://www.youtube.com/embed/rdJ22SxkeIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>\\\\video embed here</indexMusic>
+        <colWidth>
+            400px
+        </colWidth>
+        <description>
+            so um this is sample i got from nerdy music sstuff xd xd
+        </description>
         <sampleValues>
-            <description>
-
-            </description>
             <theSample>
                 <index>
 
@@ -14,6 +17,30 @@
                 </timestamp>
                 <creator>
 
+                </creator>
+            </theSample>
+        </sampleValues>
+    </sample>
+    <sample>
+        <indexMusic>
+            <iframe width="260" height="95" src="https://www.youtube.com/embed/rdJ22SxkeIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>\\\\<iframe width="260" height="95" src="https://www.youtube.com/embed/rdJ22SxkeIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </indexMusic>
+        <colWidth>
+            600px
+        </colWidth>
+        <description>
+            so um this is sample i got from nerdy music sstuff xd xd
+        </description>
+        <sampleValues>
+            <theSample>
+                <index>
+
+                </index>
+                <timestamp>
+                    4:00
+                </timestamp>
+                <creator>
+                    mozart + jason the killer
                 </creator>
             </theSample>
         </sampleValues>
