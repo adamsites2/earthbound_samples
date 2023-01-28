@@ -1,4 +1,9 @@
 "use strict";
+function br() {
+    let br = document.createElement("span");
+    br.innerHTML = "<br/>";
+    return br;
+}
 fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
     var _a;
     const samplesDiv = document.getElementById("samples");
@@ -14,7 +19,7 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampledName = document.createElement("td");
             sampledName.textContent = index;
             tableElement.appendChild(sampledName);
-            tableElement.appendChild(document.createTextNode("nbsp;"));
+            tableElement.appendChild(br());
         });
         console.log(tableElement);
         samplesDiv.appendChild(tableElement);
