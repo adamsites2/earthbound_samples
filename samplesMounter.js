@@ -24,9 +24,9 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
         sampledIndexes.forEach((index) => {
             sampledName.innerHTML = sampledName.innerHTML + index + " ";
         });
-        subTable.appendChild(sampledName);
+        trElement.appendChild(sampledName);
         samplesDiv.appendChild(tableElement);
-        const samplesIndexes = (_d = sample.getElementsByTagName("sampleValues").item(0)) === null || _d === void 0 ? void 0 : _d.getElementsByTagName("sampleValues");
+        const samplesIndexes = (_d = sample.getElementsByTagName("sampleValues").item(0)) === null || _d === void 0 ? void 0 : _d.getElementsByTagName("theSample");
         let samplesName = document.createElement("td");
         for (let index = 0; i < samplesIndexes.length; i++) {
             let value = samplesIndexes.item(index);
@@ -34,9 +34,11 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampleTimestamp = (_f = value.getElementsByTagName("timestamp").item(0)) === null || _f === void 0 ? void 0 : _f.textContent;
             let sampleCreator = (_g = value.getElementsByTagName("creator").item(0)) === null || _g === void 0 ? void 0 : _g.textContent;
             let constructedHtmlLi = `<li>${sampleMusic}</br>${sampleTimestamp}</br>${sampleCreator}</li>`;
-            samplesName.innerHTML = samplesName.innerHTML + constructedHtmlLi + " ";
+            samplesName.innerHTML = constructedHtmlLi;
+            console.log(samplesName.innerHTML);
         }
         trElement.appendChild(samplesName);
+        subTable.appendChild(trElement);
         tableElement.appendChild(document.createTextNode((_h = sample.getElementsByTagName("description").item(0)) === null || _h === void 0 ? void 0 : _h.textContent));
     }
 }));

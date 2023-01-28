@@ -22,9 +22,9 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
         sampledIndexes.forEach((index) => {
             sampledName.innerHTML = sampledName.innerHTML + index + " "
         })
-        subTable.appendChild(sampledName)
+        trElement.appendChild(sampledName)
         samplesDiv.appendChild(tableElement)
-        const samplesIndexes = sample.getElementsByTagName("sampleValues").item(0)?.getElementsByTagName("sampleValues") as HTMLCollection
+        const samplesIndexes = sample.getElementsByTagName("sampleValues").item(0)?.getElementsByTagName("theSample") as HTMLCollection
         let samplesName = document.createElement("td") as HTMLTableCellElement
         for (let index = 0; i < samplesIndexes.length; i++){
             let value = samplesIndexes.item(index) as HTMLElement
@@ -32,9 +32,11 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
             let sampleTimestamp = value.getElementsByTagName("timestamp").item(0)?.textContent as string
             let sampleCreator = value.getElementsByTagName("creator").item(0)?.textContent as string
             let constructedHtmlLi = `<li>${sampleMusic}</br>${sampleTimestamp}</br>${sampleCreator}</li>`
-            samplesName.innerHTML = samplesName.innerHTML + constructedHtmlLi + " "
+            samplesName.innerHTML = constructedHtmlLi
+            console.log(samplesName.innerHTML)
         }
         trElement.appendChild(samplesName)
+        subTable.appendChild(trElement)
         tableElement.appendChild(document.createTextNode(sample.getElementsByTagName("description").item(0)?.textContent as string))
     }
 }))
