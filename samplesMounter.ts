@@ -8,7 +8,10 @@ fetch("/samples.xml").then(xmlSamples => xmlSamples.text().then(response => {
         let tableElement = document.createElement("tr") as HTMLTableRowElement
         const sampleIndexes = sample.textContent?.split("\n") as string[]
         sampleIndexes.forEach((index) => {
-
+            let sampledName = document.createElement("td") as HTMLTableCellElement
+            sampledName.textContent = index + "</br>"
+            tableElement.appendChild(sampledName)
         })
+        samplesDiv.appendChild(tableElement)
     })
 }))
